@@ -4,8 +4,14 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="true"
+      ></friend-contact>
     </ul>
   </section>
 </template>
@@ -19,17 +25,17 @@ export default {
           id: "manuel",
           name: "Manuel Lorenz",
           phone: "010 1234 1234",
-          email: "manuel@localhos.com"
+          email: "manuel@localhos.com",
         },
         {
           id: "julie",
           name: "Julie Jones",
           phone: "010 2222 3333",
-          email: "julie@localhos.com"
-        }
-      ]
+          email: "julie@localhos.com",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -39,7 +45,7 @@ export default {
 }
 
 html {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 body {
